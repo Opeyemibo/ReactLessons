@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Playbook – Beginner Friendly Tutorial</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="hero">
+      <div class="hero__content">
+        <h1>React Playbook</h1>
+        <p>
+          A beginner-first pathway from core JavaScript concepts to confidently
+          building complete React applications.
+        </p>
+        <div class="hero__cta">
+          <a class="button" href="#environment"
+            >Start with the setup checklist</a
+          >
+          <a class="button button--secondary" href="#module-js-foundations"
+            >Jump to lessons</a
+          >
+        </div>
+      </div>
+      <nav class="top-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#environment">Setup</a></li>
+          <li><a href="#module-js-foundations">JavaScript Basics</a></li>
+          <li><a href="#module-modern-js">Modern JS</a></li>
+          <li><a href="#module-react-fundamentals">React Fundamentals</a></li>
+          <li><a href="#module-state-effects">State &amp; Hooks</a></li>
+          <li><a href="#module-architecture">Architecture</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section id="environment" class="section section--highlight">
+        <h2>Environment Setup – Download &amp; Configure React</h2>
+        <ol class="step-list">
+          <li>
+            <h3>Install Node.js</h3>
+            <p>
+              Visit
+              <a href="https://nodejs.org" target="_blank" rel="noopener"
+                >nodejs.org</a
+              >
+              and download the LTS (Long-Term Support) version. Run the
+              installer and keep the default options. This installs Node.js and
+              the npm package manager needed to run React projects.
+            </p>
+            <p class="pro-tip">
+              <strong>Check:</strong> Open your terminal and run
+              <code>node -v</code> and <code>npm -v</code>. You should see
+              version numbers.
+            </p>
+          </li>
+          <li>
+            <h3>Choose an Editor</h3>
+            <p>
+              Visual Studio Code is a great free option. Download it from
+              <a
+                href="https://code.visualstudio.com/"
+                target="_blank"
+                rel="noopener"
+                >code.visualstudio.com</a
+              >
+              and install the JavaScript, React, and ESLint extensions for a
+              smoother experience.
+            </p>
+          </li>
+          <li>
+            <h3>Create a New React Project</h3>
+            <div class="card">
+              <h4>Option A: Vite (fast modern tooling)</h4>
+              <ol>
+                <li>
+                  Run
+                  <code
+                    >npm create vite@latest react-playbook -- --template
+                    react</code
+                  >.
+                </li>
+                <li><code>cd react-playbook</code></li>
+                <li><code>npm install</code></li>
+                <li>
+                  <code>npm run dev</code> and open the shown local URL in the
+                  browser.
+                </li>
+              </ol>
+            </div>
+            <div class="card">
+              <h4>Option B: Create React App (friendly classic experience)</h4>
+              <ol>
+                <li><code>npx create-react-app react-playbook</code></li>
+                <li><code>cd react-playbook</code></li>
+                <li>
+                  <code>npm start</code> to launch the development server.
+                </li>
+              </ol>
+            </div>
+            <p class="note">
+              Both options install React, ReactDOM, and supporting tooling. Pick
+              one and stick with it through the lessons.
+            </p>
+          </li>
+          <li>
+            <h3>Optional: Configure Git</h3>
+            <p>
+              Install
+              <a href="https://git-scm.com/" target="_blank" rel="noopener"
+                >Git</a
+              >, then run <code>git init</code> inside your project folder to
+              start saving checkpoints of your progress.
+            </p>
+          </li>
+        </ol>
+        <p class="section-summary">
+          Your environment is ready once you can run <code>npm run dev</code> or
+          <code>npm start</code> and see the React starter page in your browser.
+        </p>
+      </section>
+
+      <section id="module-js-foundations" class="section">
+        <h2>Module 1 · JavaScript Foundations</h2>
+        <p>
+          These lessons build a solid JavaScript base so you can read and write
+          React code with confidence.
+        </p>
+        <div class="lesson-grid">
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-js-1"
+            >
+              Lesson 1: Meet JavaScript
+            </button>
+            <div id="lesson-js-1" class="lesson-content" hidden>
+              <p>
+                JavaScript is the language that powers interactivity on the web.
+                You can run it directly in any browser or on your machine with
+                Node.js. Learn how to embed a simple script in an HTML file and
+                how to open the browser console to experiment.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create <code>hello.html</code> with a script that logs
+                  <code>"Hello, JavaScript"</code>.
+                </li>
+                <li>
+                  Open it in your browser and use the console to change the
+                  message.
+                </li>
+                <li>Try <code>alert()</code> to pop up a greeting message.</li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-js-2"
+            >
+              Lesson 2: Variables &amp; Types
+            </button>
+            <div id="lesson-js-2" class="lesson-content" hidden>
+              <p>
+                JavaScript stores information in variables created with
+                <code>let</code>, <code>const</code>, or <code>var</code>.
+                Primitive types include strings, numbers, booleans, null, and
+                undefined. Objects and arrays group related data.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Declare variables for a learner's name, enrolled status, and
+                  progress percentage.
+                </li>
+                <li>
+                  Create an object <code>student</code> that combines those
+                  values.
+                </li>
+                <li>
+                  Use <code>console.table(student)</code> to inspect the object.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-js-3"
+            >
+              Lesson 3: Functions &amp; Scope
+            </button>
+            <div id="lesson-js-3" class="lesson-content" hidden>
+              <p>
+                Functions package reusable logic. Learn declaration vs. arrow
+                functions and how scope determines where variables can be used.
+                Understand parameters, return values, and default arguments.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Write a function
+                  <code>greetStudent(name = "Coder")</code> that returns a
+                  greeting string.
+                </li>
+                <li>
+                  Create an arrow function
+                  <code>calculateScore(completedLessons, totalLessons)</code>
+                  returning a percentage.
+                </li>
+                <li>Log both results to reinforce function usage.</li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-js-4"
+            >
+              Lesson 4: Arrays &amp; Objects in Practice
+            </button>
+            <div id="lesson-js-4" class="lesson-content" hidden>
+              <p>
+                Arrays hold ordered lists while objects store key/value pairs.
+                Discover methods like <code>push</code>, <code>map</code>, and
+                <code>filter</code> that you will use frequently in React to
+                transform data.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>Create an array of lesson titles.</li>
+                <li>
+                  Use <code>map</code> to create a numbered list of titles.
+                </li>
+                <li>
+                  Filter lessons that include the word "React" and log the
+                  result.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-js-5"
+            >
+              Lesson 5: DOM Essentials
+            </button>
+            <div id="lesson-js-5" class="lesson-content" hidden>
+              <p>
+                The Document Object Model (DOM) represents HTML as objects.
+                Learn how to query elements, update text, change classes, and
+                respond to user events. These skills translate directly to how
+                React manages the UI for you.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>Create a simple HTML list of lessons.</li>
+                <li>
+                  Use JavaScript to append a new lesson item when a button is
+                  clicked.
+                </li>
+                <li>
+                  Toggle a CSS class on click to highlight completed lessons.
+                </li>
+              </ol>
+            </div>
+          </article>
+        </div>
+        <div class="project-callout">
+          <h3>Mini Project · Learning Journal</h3>
+          <p>
+            Build a small web page that lists the lessons you have completed.
+            Include buttons to mark lessons as done and store the count in
+            <code>localStorage</code> so progress persists.
+          </p>
+        </div>
+      </section>
+
+      <section id="module-modern-js" class="section section--alt">
+        <h2>Module 2 · Modern JavaScript for React</h2>
+        <p>
+          Upgrade your toolkit with ES6+ features and tooling patterns used in
+          every React project.
+        </p>
+        <div class="lesson-grid">
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-modern-1"
+            >
+              Lesson 6: ES6 Syntax Essentials
+            </button>
+            <div id="lesson-modern-1" class="lesson-content" hidden>
+              <p>
+                Explore template literals, destructuring, spread/rest operators,
+                and shorthand object properties. These patterns keep React
+                components clean and readable.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>Destructure fields from a <code>student</code> object.</li>
+                <li>
+                  Create arrays using spread syntax to add new lessons without
+                  mutating existing ones.
+                </li>
+                <li>
+                  Write a function that uses rest parameters to accept any
+                  number of scores.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-modern-2"
+            >
+              Lesson 7: Async JavaScript
+            </button>
+            <div id="lesson-modern-2" class="lesson-content" hidden>
+              <p>
+                React apps frequently fetch data. Learn how promises,
+                <code>fetch</code>, <code>async</code>, and
+                <code>await</code> make asynchronous code easy to read.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Use <code>fetch</code> to request mock lesson data from
+                  <a href="https://jsonplaceholder.typicode.com/posts"
+                    >JSONPlaceholder</a
+                  >.
+                </li>
+                <li>Show a loading message while waiting for the response.</li>
+                <li>Handle errors with <code>try...catch</code>.</li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-modern-3"
+            >
+              Lesson 8: Modules &amp; Tooling
+            </button>
+            <div id="lesson-modern-3" class="lesson-content" hidden>
+              <p>
+                Modern projects break code into modules. Learn named vs. default
+                exports, how bundlers assemble files, and how to structure
+                folders for clarity.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create <code>mathTools.js</code> exporting helper functions.
+                </li>
+                <li>Import them into another file and log results.</li>
+                <li>
+                  Move your HTML/JS into a simple Vite project to experience
+                  module imports.
+                </li>
+              </ol>
+            </div>
+          </article>
+        </div>
+        <div class="project-callout">
+          <h3>Project · Course Planner Dashboard</h3>
+          <p>
+            Build a dashboard that loads lesson data from a JSON file (or API)
+            and displays status filters (All, In Progress, Completed). This
+            prepares you for React state and props.
+          </p>
+        </div>
+      </section>
+
+      <section id="module-react-fundamentals" class="section">
+        <h2>Module 3 · React Fundamentals</h2>
+        <p>
+          Learn what React is, why it matters, and how to build your first
+          components.
+        </p>
+        <div class="lesson-grid">
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-react-1"
+            >
+              Lesson 9: React &amp; JSX Basics
+            </button>
+            <div id="lesson-react-1" class="lesson-content" hidden>
+              <p>
+                JSX lets you write HTML-like syntax in JavaScript. Under the
+                hood it calls <code>React.createElement</code>. Learn about
+                components, props, and the virtual DOM.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create a new React component <code>Header</code> that returns
+                  a <code>&lt;header&gt;</code> element.
+                </li>
+                <li>Render it inside <code>App.jsx</code>.</li>
+                <li>Pass a <code>title</code> prop and display it.</li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-react-2"
+            >
+              Lesson 10: Props &amp; Component Trees
+            </button>
+            <div id="lesson-react-2" class="lesson-content" hidden>
+              <p>
+                Components communicate through props. Parent components pass
+                data while children display or transform it. Treat props as
+                read-only.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create <code>LessonCard</code> that accepts
+                  <code>title</code>, <code>summary</code>, and
+                  <code>level</code>.
+                </li>
+                <li>
+                  Render multiple cards from an array using <code>map</code>.
+                </li>
+                <li>
+                  Add <code>PropTypes</code> (or TypeScript types) to document
+                  the props.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-react-3"
+            >
+              Lesson 11: Handling Events
+            </button>
+            <div id="lesson-react-3" class="lesson-content" hidden>
+              <p>
+                Use event handlers to respond to clicks and form submissions.
+                Learn how to prevent default browser behavior and how to pass
+                data into handlers.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Add a button that logs <code>"Lesson started"</code> when
+                  clicked.
+                </li>
+                <li>
+                  Build a controlled input that updates state as you type.
+                </li>
+                <li>
+                  Handle form submission, preventing reload with
+                  <code>event.preventDefault()</code>.
+                </li>
+              </ol>
+            </div>
+          </article>
+        </div>
+        <div class="project-callout">
+          <h3>Project · React Lesson Library</h3>
+          <p>
+            Build a React app that lists lessons with title, difficulty, and a
+            "Start" button for each. Use props to pass data to reusable
+            components and track what the learner has opened.
+          </p>
+        </div>
+      </section>
+
+      <section id="module-state-effects" class="section section--alt">
+        <h2>Module 4 · State, Effects &amp; Data Flow</h2>
+        <p>
+          Master how React tracks changes, reacts to user input, and talks to
+          external APIs.
+        </p>
+        <div class="lesson-grid">
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-state-1"
+            >
+              Lesson 12: Managing State with useState
+            </button>
+            <div id="lesson-state-1" class="lesson-content" hidden>
+              <p>
+                <code>useState</code> lets components remember values between
+                renders. Learn how to update state immutably and how React
+                re-renders with new state.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create a progress tracker with <code>useState</code> storing
+                  completed lesson count.
+                </li>
+                <li>
+                  Add increment/decrement buttons with safeguards against
+                  negative values.
+                </li>
+                <li>
+                  Display a congratulatory message when all lessons are
+                  complete.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-state-2"
+            >
+              Lesson 13: Side Effects with useEffect
+            </button>
+            <div id="lesson-state-2" class="lesson-content" hidden>
+              <p>
+                <code>useEffect</code> runs code after a render. Use it for data
+                fetching, subscriptions, and syncing state with the outside
+                world. Learn dependency arrays and cleanup functions.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Fetch lesson data from a public API and show a loading
+                  indicator.
+                </li>
+                <li>Store fetched data in state and render it.</li>
+                <li>
+                  Clean up a timer or event listener inside the cleanup
+                  function.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-state-3"
+            >
+              Lesson 14: Forms &amp; Controlled Inputs
+            </button>
+            <div id="lesson-state-3" class="lesson-content" hidden>
+              <p>
+                Controlled components keep the source of truth in React state.
+                Manage form inputs, validation, and submit handlers to capture
+                user data cleanly.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Build a form to collect lesson feedback with name, rating, and
+                  comments.
+                </li>
+                <li>Validate that name and rating are provided.</li>
+                <li>Display submitted feedback below the form.</li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-state-4"
+            >
+              Lesson 15: Data Flow &amp; Lifting State
+            </button>
+            <div id="lesson-state-4" class="lesson-content" hidden>
+              <p>
+                When multiple components need the same data, lift state to their
+                closest common parent. Learn patterns for passing down state and
+                updater functions via props.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create <code>ModuleList</code> with child
+                  <code>ModuleFilter</code> and <code>ModuleCards</code>.
+                </li>
+                <li>
+                  Store filter state in the parent and pass setters to the
+                  filter.
+                </li>
+                <li>Render filtered modules in the cards component.</li>
+              </ol>
+            </div>
+          </article>
+        </div>
+        <div class="project-callout">
+          <h3>Project · React Progress Tracker</h3>
+          <p>
+            Combine everything to track progress across modules. Fetch module
+            data, filter lessons, and allow learners to mark items complete.
+            Persist data in <code>localStorage</code> or a lightweight backend.
+          </p>
+        </div>
+      </section>
+
+      <section id="module-architecture" class="section">
+        <h2>Module 5 · Architecture, Routing &amp; Beyond</h2>
+        <p>
+          Take your React apps from small demos to production-ready projects by
+          organizing code and adding routing, context, and testing.
+        </p>
+        <div class="lesson-grid">
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-arch-1"
+            >
+              Lesson 16: Project Structure &amp; Styling
+            </button>
+            <div id="lesson-arch-1" class="lesson-content" hidden>
+              <p>
+                Discover common folder structures (<code>src/components</code>,
+                <code>src/hooks</code>, etc.), CSS Modules, styled-components,
+                and utility-first CSS frameworks like Tailwind.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>Refactor a project to group components by feature.</li>
+                <li>Add global styles and component-specific styles.</li>
+                <li>Document the structure in a <code>README</code>.</li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-arch-2"
+            >
+              Lesson 17: Routing with React Router
+            </button>
+            <div id="lesson-arch-2" class="lesson-content" hidden>
+              <p>
+                Use React Router to create multi-page experiences without
+                leaving the SPA. Define routes, use navigation components, and
+                render route parameters.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Install React Router with
+                  <code>npm install react-router-dom</code>.
+                </li>
+                <li>Create routes for Home, Lessons, and Projects.</li>
+                <li>
+                  Use <code>useParams</code> to load dynamic lesson details.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-arch-3"
+            >
+              Lesson 18: Global State &amp; Context
+            </button>
+            <div id="lesson-arch-3" class="lesson-content" hidden>
+              <p>
+                Context lets you share data without prop drilling. Learn when to
+                use context, how to create providers, and alternatives like
+                Redux and Zustand.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Create a <code>ProgressContext</code> that stores lessons
+                  completed.
+                </li>
+                <li>Wrap your app with the provider.</li>
+                <li>
+                  Consume the context in nested components to show global
+                  progress.
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article class="lesson">
+            <button
+              class="lesson-toggle"
+              aria-expanded="false"
+              aria-controls="lesson-arch-4"
+            >
+              Lesson 19: Testing &amp; Deployment
+            </button>
+            <div id="lesson-arch-4" class="lesson-content" hidden>
+              <p>
+                Testing ensures confidence. Learn how to write unit tests with
+                Jest and React Testing Library, then deploy to Vercel, Netlify,
+                or GitHub Pages.
+              </p>
+              <h3>Practical Exercise</h3>
+              <ol>
+                <li>
+                  Write a test that checks if your lesson cards render the
+                  correct title.
+                </li>
+                <li>
+                  Use <code>@testing-library/react</code> to simulate a button
+                  click.
+                </li>
+                <li>
+                  Deploy your app with <code>npm run build</code> and connect to
+                  a hosting provider.
+                </li>
+              </ol>
+            </div>
+          </article>
+        </div>
+        <div class="project-callout">
+          <h3>Capstone Project · React Learning Portal</h3>
+          <p>
+            Design a multi-page React application that features lesson
+            navigation, progress tracking, feedback forms, and a personalized
+            dashboard. Include routing, context for global state, and at least
+            one API integration.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects" class="section section--highlight">
+        <h2>Project Ideas &amp; Milestones</h2>
+        <ul class="project-list">
+          <li>
+            <h3>Project 1 · JS Quiz App</h3>
+            <p>
+              Create a multiple-choice quiz that tests JavaScript basics. Show
+              score feedback and allow retakes.
+            </p>
+          </li>
+          <li>
+            <h3>Project 2 · React Study Planner</h3>
+            <p>
+              Use React to plan weekly study sessions, mark tasks complete, and
+              display motivational quotes fetched from an API.
+            </p>
+          </li>
+          <li>
+            <h3>Project 3 · Component Library</h3>
+            <p>
+              Build a reusable set of buttons, cards, and navigation components.
+              Document them in Storybook or a custom showcase page.
+            </p>
+          </li>
+          <li>
+            <h3>Project 4 · Full-stack Learning Tracker</h3>
+            <p>
+              Combine React with a backend (Firebase, Supabase, or Express) to
+              persist lessons, achievements, and notes.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="learning-strategies" class="section">
+        <h2>Learning Strategies &amp; Study Tips</h2>
+        <ul>
+          <li>
+            <strong>Chunk learning:</strong> Focus on one lesson per session and
+            complete the exercise before moving on.
+          </li>
+          <li>
+            <strong>Teach back:</strong> Explain concepts aloud or in a
+            journal—teaching helps you remember.
+          </li>
+          <li>
+            <strong>Practice daily:</strong> Short sessions every day beat one
+            long session each week.
+          </li>
+          <li>
+            <strong>Reflect:</strong> After each project, note what went well
+            and what you would improve.
+          </li>
+        </ul>
+      </section>
+
+      <section id="resources" class="section section--alt">
+        <h2>Helpful Resources</h2>
+        <div class="resource-grid">
+          <article>
+            <h3>Official Documentation</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+                  target="_blank"
+                  rel="noopener"
+                  >MDN JavaScript Guide</a
+                >
+              </li>
+              <li>
+                <a href="https://react.dev/" target="_blank" rel="noopener"
+                  >React Docs</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://vitejs.dev/guide/"
+                  target="_blank"
+                  rel="noopener"
+                  >Vite Guide</a
+                >
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h3>Practice Platforms</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.frontendmentor.io/"
+                  target="_blank"
+                  rel="noopener"
+                  >Frontend Mentor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.codewars.com/"
+                  target="_blank"
+                  rel="noopener"
+                  >Codewars</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://scrimba.com/learn/learnreact"
+                  target="_blank"
+                  rel="noopener"
+                  >Scrimba React Course</a
+                >
+              </li>
+            </ul>
+          </article>
+          <article>
+            <h3>Communities</h3>
+            <ul>
+              <li>
+                <a href="https://dev.to/" target="_blank" rel="noopener"
+                  >DEV Community</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://discord.gg/reactiflux"
+                  target="_blank"
+                  rel="noopener"
+                  >Reactiflux Discord</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://stackoverflow.com/questions/tagged/reactjs"
+                  target="_blank"
+                  rel="noopener"
+                  >Stack Overflow React Tag</a
+                >
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>
+        Built with care for beginners. Keep practicing, stay curious, and have
+        fun with React!
+      </p>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
